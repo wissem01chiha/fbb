@@ -1,30 +1,24 @@
 Fbb
 ===
+![GitHub License](https://img.shields.io/github/license/wissem01chiha/fbb)
 
-### C++ Implementation of Flow-Based Programming (FBP)
+fbb (flow-building blocks) is a set of optimized runtime components/libraries and various development tools written in modern C++, with multiple language bindings that let you write applications in flow-based paradigms (see below for more info).
 
-General web site on Flow-Based Programming: https://jpaulm.github.io/fbp/ .
+fbb is designed with performance in mind, targeting large-scale distributed complex dataflow execution graphs.
 
-General
----
+Due to the architectural design of flow-based applications, which rely on separate node/components processing data tokens/information packets, the parallelism of such programs is significant; thus the fbb core runtime is built around multithreading and SIMD features of modern processor units.
 
-In computer programming, flow-based programming (FBP) is a programming paradigm that defines applications as networks of "black box" processes, which exchange data across predefined connections by message passing, where the connections are specified externally to the processes. These black box processes can be reconnected endlessly to form different applications without having to be changed internally. FBP is thus naturally component-oriented.
+Writing flow-based programs often requires rethinking system design. Instead of direct callbacks, which create strong coupling between components (for example, changing a class's public API may require updating all dependent code and tests), standardizing how black-box nodes communicate through messages and callback signatures reduces coupling. Unit tests remain stable while internals change. Adding or removing a node affects program output only; no changes are required to nodes' private or public APIs.
+
+In computer programming, flow-based programming is a programming paradigm that defines applications as networks of "black box" processes, which exchange data across predefined connections by message passing, where the connections are specified externally to the processes. These black box processes can be reconnected endlessly to form different applications without having to be changed internally. FBP is thus naturally component-oriented.
 
 FBP is a particular form of dataflow programming based on bounded buffers, information packets with defined lifetimes, named ports, and separate definition of connections.
 
-One interesting aspect of this implementation is that it supports the scripting language `Lua`, so large parts of your networks can be written in a scripting language if desired.
+One interesting aspect of this implementation is that it supports scripting languages, so large parts of your networks can be written in a scripting language if desired.
 
-This implementation is based on an older C implementation called [THREADN](https://github.com/jpaulm/threadn/blob/master/README.md), which used `longjmp` and `setjmp` to control process scheduling.  The scheduling parts of CppFBP now use [Boost](https://www.boost.org/) instead of `longjmp` and `setjmp`. Much of the rest of the overall THREADN architecture has been incorporated into CppFBP - in particular, THREADN allowed networks to be defined dynamically or statically - this has been preserved in CppFBP.  See the description of "static" vs. "dynamic" in https://github.com/jpaulm/threadn/blob/master/README.md .
+> [!NOTE]
+> Although the project started as a fork of [jpaulmorrison](https://jpaulm.github.io/fbp/)'s work, it's now a completely different software, with a different license; however, a homage to jpaulmorrison is included in the copyright notices.
 
-Web sites for FBP: 
-* http://www.jpaulmorrison.com/fbp/
-* https://github.com/flowbased/flowbased.org/wiki
-
-Sample Component, Component API and Network Definitions
-* http://www.jpaulmorrison.com/fbp/CppFBP.shtml
- 
-Services supported by Lua interface, and some sample CppFBP/Lua scripts
-* http://www.jpaulmorrison.com/fbp/thlua.html
 
 ## Goals
 
