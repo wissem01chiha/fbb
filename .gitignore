@@ -27,6 +27,7 @@ hs_err_pid*
 *.opendb
 **/Release/
 **/Debug/
+.vscode/
 
 #data files
 */output.fil
