@@ -1,4 +1,4 @@
-CppFBP
+Fbb
 ===
 
 ### C++ Implementation of Flow-Based Programming (FBP)
@@ -25,6 +25,15 @@ Sample Component, Component API and Network Definitions
  
 Services supported by Lua interface, and some sample CppFBP/Lua scripts
 * http://www.jpaulmorrison.com/fbp/thlua.html
+
+## Goals
+
+
+## Reporting Issues
+
+Report bugs by opening a [GitHub issue](https://github.com/wissem01chiha/fbb/issues) . We track issues via GitHub.
+
+Please help us process bug reports efficiently by providing clear repro steps, environment details, and minimal examples when possible.
 
 
 Prerequisites
